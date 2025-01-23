@@ -1,0 +1,28 @@
+class Parent {
+    void showMessage() {
+        System.out.println("Hello World");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void showMessage() {
+        System.out.println("Hello JUET");
+    }
+}
+
+class Application {
+    public static void main(String[] args) {
+        Parent parentObject = new Parent();
+        parentObject.showMessage();
+
+        Child childObject = new Child();
+        childObject.showMessage();
+
+        Parent polymorphicObject = new Child();
+        polymorphicObject.showMessage();
+
+        Parent m1 = new Child();
+        m1.showMessage();
+    }
+}
