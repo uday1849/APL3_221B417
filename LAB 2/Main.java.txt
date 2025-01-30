@@ -1,0 +1,28 @@
+abstract class Voice2 {
+    public final void templateMethod() {
+        prepareVoice();
+        hear();
+    }
+    
+    protected abstract void prepareVoice();
+    protected abstract void hear();
+}
+
+class ConcreteVoice extends Voice2 {
+    @Override
+    protected void prepareVoice() {
+        System.out.println("Preparing the voice...");
+    }
+
+    @Override
+    protected void hear() {
+        System.out.println("Hearing the voice...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Voice2 voice = new ConcreteVoice();
+        voice.templateMethod();
+    }
+}
